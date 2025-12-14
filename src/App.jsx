@@ -6,7 +6,7 @@ import UserDetailPage from "./Components/UserDetailPage";
 const App = () => {
   return (
     <Routes>
-      <Route Index element={<h1>ລາຍການຊື່</h1>} />
+      <Route index element={<h1>ລາຍການຊື່</h1>} />
       <Route path="/userlistpage" element={<UserListPage />} />
       <Route path="/userdetailpage" element={<UserDetailPage />} />
     </Routes>
