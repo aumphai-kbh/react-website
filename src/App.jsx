@@ -1,16 +1,29 @@
 import React from "react";
-import UserListPage from "./Components/UserListPage";
+
 import { Routes, Route } from "react-router";
-import UserDetailPage from "./Components/UserDetailPage";
+
+import MainLayout from "./Pages/MainLayout";
+// Windows
+import HomePage from "./Pages/HomePage";
+import AboutPage from "./Pages/AboutPage";
+import NotFound from "./Pages/NotFound";
+import PostListPage from "./Pages/PostListPage";
+import PostDetailPage from "./Pages/PostDetailPage";
 
 const App = () => {
+  // Logic Parts
   return (
     <Routes>
-      <Route index element={<h1>ລາຍການຊື່</h1>} />
-      <Route path="/userlistpage" element={<UserListPage />} />
-      <Route path="/userdetailpage" element={<UserDetailPage />} />
+      <Route element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/posts" element={<PostListPage />} />
+        <Route path="/posts/:postId" element={<PostDetailPage />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
 
+// Export parts
 export default App;
